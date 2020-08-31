@@ -1,3 +1,4 @@
+import java.util.Date;
 
 public class SwedishID {
 		
@@ -66,6 +67,24 @@ public class SwedishID {
 			else
 				return false;
 		}
+		
+		
+		public int calculateAge() {
+			
+			// Derive birth information from ID
+			int currentIDBirthYear = this.birthday.getYear();
+			
+			// Derive current year information
+			Date date = new Date();
+			@SuppressWarnings("deprecation")
+			int currentYear = date.getYear() + 1900;
+			
+			// Calculate age
+			int age = currentYear - currentIDBirthYear;
+			
+			return age;
+		}
+		
 		
 		
 		// Method to compare IDs (based on birthdate)
